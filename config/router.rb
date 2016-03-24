@@ -16,6 +16,8 @@ class Router
     #
     # Put your routes in this array using the get, post, put, delete methods below. (remember order matters)
     [
+      api_resource("posts", PostsController),
+      api_resource("comments", CommentsController),
       post('/tweets', TweetsController, :create),
       get('/tweets/new', TweetsController, :new),
       get('/tweets/:id', TweetsController, :show),
