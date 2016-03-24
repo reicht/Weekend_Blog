@@ -8,7 +8,7 @@ class PostsController < ApplicationController
     if @target[:format] == "json"
       render $post_list.to_json
     else
-      render_template 'tasks_list.html.erb'
+      render_template 'posts/index.html.erb'
     end
   end
 
@@ -19,7 +19,7 @@ class PostsController < ApplicationController
         render post.to_json
       else
         @post = post
-        render_template 'view_task.html.erb'
+        render_template 'posts/show.html.erb'
       end
     else
       render_not_found

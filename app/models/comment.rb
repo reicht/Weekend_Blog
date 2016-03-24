@@ -15,13 +15,8 @@ class Comment
     {
       id: id,
       body: body,
-      completed: completed
+      parent_id: parent_id,
     }.to_json
   end
 
-  private
-
-  def Task.get_id
-    $given_ids += 1
-  end
 end

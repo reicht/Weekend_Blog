@@ -19,9 +19,4 @@ class Post
     }.to_json
   end
 
-  private
-
-  def Task.get_id
-    $given_ids += 1
-  end
 end

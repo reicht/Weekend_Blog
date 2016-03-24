@@ -28,7 +28,7 @@ class CommentsController < ApplicationController
 
   def create
     $comment_list << Comment.new(@params["body"])
-    render({ message: "Successfully created new post!" }.to_json)
+    render({ message: "Successfully created new comment!" }.to_json)
   end
 
   def update

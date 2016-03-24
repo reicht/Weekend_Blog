@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" text="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+    <link rel="stylesheet" text="text/css" href="/assets/main.css" charset="utf-8">
+    <meta charset="utf-8">
+    <title> Posts </title>
+  </head>
+
+  <body>
+    <hr>
+    <h2>COMMENTS THIS TIME BRAH</h2>
+    <hr>
+    <ol>
+      <% $comment_list.each do |comment|
+        if comment.completed == "false"%>
+          <li><a href="http://localhost:3001/tasks/<%=comment.id%>/complete"> ✘</a>
+            <a href="http://localhost:3001/tasks/<%=comment.id%>"> <%=comment.body%></a></li>
+        <%end
+      end%>
+    </ol>
+    <hr>
+    <hr>
+    <h2>Other</h2>
+    <hr>
+    <ol>
+      <% $comment_list.each do |comment|
+        if comment.completed == "true"%>
+          <li> ✔ <a href="http://localhost:3001/tasks/<%=comment.id%>"><%=comment.body%></a></li>
+        <%end
+      end%>
+    </ol>
+    <hr>
+
+  </body>
+
+</html>
