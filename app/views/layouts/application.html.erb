@@ -7,7 +7,27 @@
     <link media="screen" rel="stylesheet" href="/assets/stylesheets/application.css"  />
   </head>
   <body>
+    <header>
+      <a href="#">
+        <div class="top-bar-home">
+        <p>Home</p></a>
+      </div>
+      <a href="#">
+        <div class="top-bar-posts">
+        <p>Posts</p></a>
+      </div>
+      <a href="#">
+        <div class="top-bar-comments">
+        <p>Comments</p></a>
+      </div>
+      <a href="#">
+        <div class="top-bar-create">
+        <p>Creation</p></a>
+      </div>
+    </header>
+    <section>
     <!-- Ruby will place one of my templates inside of this file, right here where I call "yield"  -->
     <%= yield %>
+  </section>
   </body>
 </html>

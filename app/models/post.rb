@@ -1,12 +1,13 @@
 require 'json'
 
 class Post
-  attr_accessor :title, :body, :id, :published, :local_comments, :comment_ids
+  attr_accessor :title, :body, :id, :published, :comments, :comment_ids, :timestamp
 
   def initialize(title, body, id = -1)
+    @timestamp = Time.now.strftime("at %H:%M %y/%m/%d")
     @title = title
     @body = body
-    @local_comments = []
+    @comments = []
     @comment_ids = 0
     if id == -1
       @id = Post.get_id
@@ -14,7 +15,6 @@ class Post
       @id = id
     end
     $post_list << self
-    @local_comments << $comment_list
   end
 
   def Post.setup(num)

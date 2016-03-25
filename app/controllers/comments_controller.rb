@@ -5,11 +5,8 @@ class CommentsController < ApplicationController
   end
 
   def index
-    if @target[:format] == "json"
-      render $comment_list.to_json
-    else
-      render_template 'comments/index.html.erb'
-    end
+    @post_list = $post_list
+    render_template 'comments/index.html.erb'
   end
 
   def show

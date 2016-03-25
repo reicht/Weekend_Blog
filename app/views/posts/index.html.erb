@@ -2,12 +2,13 @@
     <h1>Most Recent Blog Posts</h1>
     <hr>
     <ol>
-      <%@posts.each do |post|%>
+      <%@posts.reverse.each do |post|%>
           <li><a href="http://localhost:3001/posts/<%=post.id%>"><%=post.title%></a>
             <hr>
             <p>
               <%=post.body%>
             </p>
           </li>
+          <div> Comments: <%=post.comment_ids%>                Posted <%=post.timestamp%></div>
       <%end%>
     </ol>

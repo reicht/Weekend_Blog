@@ -1,5 +1,41 @@
 html, body {
+  line-height: 1.6;
   margin: 0;
   font-family: "helvetica";
   color: #333;
+}
+
+body {
+  background-color: #7C4DB0;
+  color: #2F134F;
+}
+
+section {
+  padding: 1em;
+}
+
+a {
+  color: #FFECC1;
+}
+
+a:visited {
+  color: #CC9A53;
+}
+
+header {
+  height: 3em;
+  color: #7C4DB0;
+  background-color: #2F134F;
+  text-align: center;
+  overflow: hidden;
+}
+
+header > div {
+  float: right;
+  width: 6em;
+}
+
+header > div.top-bar-home {
+  float: left;
+  margin-left: 1.5em;
 }
