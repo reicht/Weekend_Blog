@@ -23,7 +23,6 @@ class Router
       get('/tweets/:id', TweetsController, :show),
       get('/tweets', TweetsController, :index),
       get('/not_here', TweetsController, :not_here), # This is to demo the new redirect_to method
-
       get('/assets/:type/:name', AssetsController, :handle),
       root(TweetsController, :index)
     ].flatten.find(&:itself)

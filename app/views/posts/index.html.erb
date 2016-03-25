@@ -1,28 +1,13 @@
-<!DOCTYPE html>
-<html>
 
-  <head>
-    <link rel="stylesheet" text="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
-    <link rel="stylesheet" text="text/css" href="/assets/main.css" charset="utf-8">
-    <meta charset="utf-8">
-    <title> Posts </title>
-  </head>
-
-  <body>
-    <hr>
-    <h2>Text and Shit Because</h2>
+    <h1>Most Recent Blog Posts</h1>
     <hr>
     <ol>
-      <% $post_list.each do |post|
-        if post.completed == "false"%>
-          <li><a href="http://localhost:3001/tasks/<%=post.id%>/complete"> ✘</a>
-            <a href="http://localhost:3001/tasks/<%=post.id%>"> <%=post.body%></a></li>
-        <%end
-      end%>
+      <%@posts.each do |post|%>
+          <li><a href="http://localhost:3001/posts/<%=post.id%>"><%=post.title%></a>
+            <hr>
+            <p>
+              <%=post.body%>
+            </p>
+          </li>
+      <%end%>
     </ol>
-    <hr>
-    <hr>
-
-  </body>
-
-</html>

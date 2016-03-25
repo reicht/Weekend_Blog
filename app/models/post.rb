@@ -1,7 +1,7 @@
 require 'json'
 
 class Post
-  attr_accessor :title, :body, :id, :published, :local_comments
+  attr_accessor :title, :body, :id, :published, :local_comments, :comment_ids
 
   def initialize(title, body, id = -1)
     @title = title
@@ -13,7 +13,7 @@ class Post
     else
       @id = id
     end
-    self << $post_list
+    $post_list << self
     @local_comments << $comment_list
   end
 
@@ -21,14 +21,18 @@ class Post
     id = Post.get_id
     title = $starter_post_titles[num]
     body = $starter_post_contents[num]
-    Post.new(title, body, id)
+    parent = Post.new(title, body, id)
+    3.times do |x|
+      Comment.setup(parent)
+    end
+  end
 
 
   def not_found
     return "Not Found".to_json
   end
 
-  def to_json(_ = nil)
+  def to_json( _ = nil)
     {
       id: id,
       body: body,
@@ -37,13 +41,13 @@ class Post
   end
 
   def comment_id
-    @comment_ids +=
+    @comment_ids += 1
   end
 
   private
 
   def Post.get_id
-    $post_ids +=
+    $post_ids += 1
   end
 
 end

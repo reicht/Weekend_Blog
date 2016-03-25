@@ -4,6 +4,7 @@ class Comment
   attr_accessor :body, :id, :parent_id
 
   def initialize(body, parent, id = -1)
+    @parent = parent
     @parent_id = parent.id
     @body = body
     if id == -1
@@ -14,6 +15,7 @@ class Comment
   end
 
   def Comment.setup(parent)
+    @parent = parent
     id = Comment.get_id
     body = $starter_comments[parent.id-1[id-1]]
     Comment.new(body, parent, id)
@@ -34,7 +36,7 @@ class Comment
   private
 
   def Comment.get_id
-    $comment_ids +=
+    @parent.comment_id
   end
 
 end

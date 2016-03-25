@@ -11,26 +11,3 @@
     <%= yield %>
   </body>
 </html>
-    <link rel="stylesheet" text="text/css" href="/assets/main.css" charset="utf-8">
-    <title> Comments </title>
-  </head>
-
-  <body>
-    <hr>
-    <h2>COMMENTS THIS TIME BRAH</h2>
-    <hr>
-    <ol>
-      <% $comment_list.each do |comment|
-        if comment.completed == "false"%>
-          <li><a href="http://localhost:3001/posts/<%=comment.parent_id%>/<%=comment.id%>"> ✘</a>
-            <a href="http://localhost:3001/tasks/<%=comment.id%>"> <%=comment.body%></a></li>
-        <%end
-      end%>
-    </ol>
-    <hr>
-    <hr>
-    <hr>
-
-  </body>
-
-</html>

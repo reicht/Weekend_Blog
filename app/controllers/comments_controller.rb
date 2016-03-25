@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
     if @target[:format] == "json"
       render $comment_list.to_json
     else
-      render_template 'tasks_list.html.erb'
+      render_template 'comments/index.html.erb'
     end
   end
 

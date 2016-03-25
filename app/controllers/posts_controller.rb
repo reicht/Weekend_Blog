@@ -5,11 +5,8 @@ class PostsController < ApplicationController
   end
 
   def index
-    if @target[:format] == "json"
-      render $post_list.to_json
-    else
-      render_template 'posts/index.html.erb'
-    end
+    @posts = $post_list
+    render_template 'posts/index.html.erb'
   end
 
   def show
