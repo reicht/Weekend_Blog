@@ -10,16 +10,17 @@ class WEBBrickServer < HTTPServlet::AbstractServlet
     request.store(:method, raw_request.request_method)
     request.store(:route, raw_request.path)
     request.store(:paths, request.fetch(:route, '/').split('/').reject(&:empty?))
+    request.store(:query, raw_request.query)
 
     if request[:paths].nil? || request[:paths].empty?
       request.store(:format, '')
     else
       request.store(:format, request[:paths][-1].split('.').last)
     end
-    
+
     request.store(:raw_request, raw_request)
     request.store(:referer, raw_request["Referer"])
-    request.store(:params, {})
+    request.store(:params, request[:query])
 
     if raw_request.body && raw_request.body.length > 1
       raw_request.body
