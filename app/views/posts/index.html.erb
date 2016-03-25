@@ -22,16 +22,6 @@
     </ol>
     <hr>
     <hr>
-    <h2>Other</h2>
-    <hr>
-    <ol>
-      <% $post_list.each do |post|
-        if post.completed == "true"%>
-          <li> ✔ <a href="http://localhost:3001/tasks/<%=post.id%>"><%=post.body%></a></li>
-        <%end
-      end%>
-    </ol>
-    <hr>
 
   </body>
 

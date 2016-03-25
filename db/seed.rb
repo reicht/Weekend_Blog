@@ -4,9 +4,14 @@ $post_ids = 0
 
 $comment_ids = 0
 
-$starter_posts = ["Words", "And", "Things"]
+$starter_post_titles = ["Words", "And", "Things"]
 
-$starter_comments = ["Stuff", "About", "Penguins"]
+$starter_post_titles = ["Cheetah, Hyena, Shingles, Roofing, Piano, Separatists, Celebrated, Rockets, Gleaming, Waves",
+                        "And, then, until, except, suddenly, although, but, therefore",
+                        "Things are amazing because they are, if things aren't, then the thing isn't a thus isn't a thing.",
+                      ]
+
+$starter_comments = ["Stuff", "Connections", "Penguins"]
 
 $post_list = []
 

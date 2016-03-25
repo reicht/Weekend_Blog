@@ -2,11 +2,35 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>My Awesome Page!</title>
+    <title>Blagoblag</title>
+    <link rel="stylesheet" text="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
     <link media="screen" rel="stylesheet" href="/assets/stylesheets/application.css"  />
   </head>
   <body>
     <!-- Ruby will place one of my templates inside of this file, right here where I call "yield"  -->
     <%= yield %>
   </body>
+</html>
+    <link rel="stylesheet" text="text/css" href="/assets/main.css" charset="utf-8">
+    <title> Comments </title>
+  </head>
+
+  <body>
+    <hr>
+    <h2>COMMENTS THIS TIME BRAH</h2>
+    <hr>
+    <ol>
+      <% $comment_list.each do |comment|
+        if comment.completed == "false"%>
+          <li><a href="http://localhost:3001/posts/<%=comment.parent_id%>/<%=comment.id%>"> ✘</a>
+            <a href="http://localhost:3001/tasks/<%=comment.id%>"> <%=comment.body%></a></li>
+        <%end
+      end%>
+    </ol>
+    <hr>
+    <hr>
+    <hr>
+
+  </body>
+
 </html>
