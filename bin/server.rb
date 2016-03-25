@@ -23,6 +23,10 @@ module App
   end
 end
 
+3.times do |x|
+  Post.setup(x)  
+end
+
 system('clear')
 
 def start_custom_webbrick_server

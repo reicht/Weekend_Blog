@@ -1,8 +1,5 @@
-# require_relative '../lib/all'
 
 $post_ids = 0
-
-$comment_ids = 0
 
 $starter_post_titles = ["Words", "And", "Things"]
 
@@ -12,7 +9,8 @@ $starter_post_contents = ["Cheetah, Hyena, Shingles, Roofing, Piano, Separatists
                       ]
 
 $starter_comments = [["Animals, Summer Work, Musical, Fourth of July, Ocean", "Connections", "Penguins should be here"],
-                    ["What?", "This seriously makes no sense"],
+                    ["What?", "This seriously makes no sense", "I get it, you know words"],
+                    ["This is really true, things are.", "Many things aren't, like unicorns.", "Then are they things?"],
                     ]
 
 $post_list = []
