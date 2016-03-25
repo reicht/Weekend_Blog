@@ -1,6 +1,7 @@
 <h1>COMMENTS THIS TIME BRAH</h1>
 <hr>
 <ol><%@post_list.reverse.each do |post|%>
+  <hr>
   <li><a href="http://localhost:3001/posts/<%=post.id%>"><%=post.title%></a>Posted <%=post.timestamp%></li>
   <ol><%post.comments.each do |comment|%>
     <hr>
@@ -8,7 +9,6 @@
       <hr>Posted <%=comment.timestamp%></li>
       <hr>
     <%end%>
-    <hr><hr>
   </ol>
   <%end%>
 </ol>

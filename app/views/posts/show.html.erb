@@ -1,0 +1,11 @@
+<h1><%=@post.title%></h1>
+<hr>
+<h2><%=@post.body%></h2>
+<hr>
+<ol>
+  <% @post.comments.each do |comment|%>
+  <a href="http://localhost:3001/comments/<%=comment.id%>">
+    <li></a><%=comment.body%></li>
+      Posted <%=comment.timestamp%>
+      <hr>
+  <%end%>

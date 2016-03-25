@@ -30,12 +30,38 @@ header {
   overflow: hidden;
 }
 
-header > div {
+header > a > div{
   float: right;
   width: 6em;
 }
 
-header > div.top-bar-home {
+header > a > div:hover{
+  color: #7C4DB0;
+  background-color: #CC9A53;
+}
+
+header > a > div.top-bar-home {
   float: left;
   margin-left: 1.5em;
 }
+
+ol{
+  border-color: #2F134F;
+  border-width: medium;
+  box-shadow: -1em -1em 1em #2F134F, 1em 1em 1em #2F134F;
+  padding: 1.5em;
+  padding-top: 0;
+
+}
+
+li{
+  padding: .5em;
+}
+
+hr {
+    border: 0;
+    height: 0;
+    box-shadow: 0 0 10px 1px black;
+}
+hr:after {
+    content: "\00a0";

@@ -10,17 +10,10 @@ class CommentsController < ApplicationController
   end
 
   def show
-    comment = targetting
-    if comment
-      if @target[:format] == "json"
-        render comment.to_json
-      else
-        @comment = comment
-        render_template 'view_task.html.erb'
-      end
-    else
-      render_not_found
-    end
+    @comment = targetting
+    @parent = $post_list[@comment.parent_id]
+    render_template '/comments/show.html.erb'
+
   end
 
   def create
