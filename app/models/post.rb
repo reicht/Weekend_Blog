@@ -3,7 +3,7 @@ require 'json'
 class Post
   attr_accessor :title, :body, :id, :published, :comments, :comment_ids, :timestamp
 
-  def initialize(title, body, id = -1)
+  def initialize(title, body, id = -1, published = false)
     @timestamp = Time.now.strftime("at %H:%M %y/%m/%d")
     @title = title
     @body = body

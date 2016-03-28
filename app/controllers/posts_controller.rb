@@ -12,20 +12,18 @@ class PostsController < ApplicationController
   def show
     post = targetting
     if post
-      if @target[:format] == "json"
-        render post.to_json
-      else
-        @post = post
-        render_template 'posts/show.html.erb'
-      end
+      @post = post
+      render_template 'posts/show.html.erb'
     else
       render_not_found
     end
   end
 
   def create
-    $post_list << Post.new(@params["body"])
-    render({ message: "Successfully created new post!" }.to_json)
+    body = @params[:body]
+    title = @params[:title]
+    Post.new(title, body)
+    redirect_to"/posts"
   end
 
   def update
@@ -57,11 +55,14 @@ class PostsController < ApplicationController
     end
   end
 
-  def complete_task
-    @params["completed"] = "true"
-    update
+  def new
+    render_template "posts/new.html.erb"
   end
 
+  def new_comment
+    @post = targetting
+    render_template "posts/new_comment.html.erb"
+  end
 
   private
 

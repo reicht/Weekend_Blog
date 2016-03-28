@@ -10,15 +10,16 @@ class CommentsController < ApplicationController
   end
 
   def show
-    @comment = targetting
-    @parent = $post_list[@comment.parent_id]
-    render_template '/comments/show.html.erb'
-
+    # @comment = targetting
+    # @parent = $post_list[@comment.parent_id]
+    # render_template 'comments/show.html.erb'
   end
 
   def create
-    $comment_list << Comment.new(@params["body"])
-    render({ message: "Successfully created new comment!" }.to_json)
+    target = @params[:post].to_i
+    post = $post_list[target - 1]
+    Comment.new(@params["comment"],post )
+    redirect_to '/comments'
   end
 
   def update
@@ -42,7 +43,7 @@ class CommentsController < ApplicationController
   def destroy
     comment = targetting
 
-    if task
+    if comment
       $post_list.delete(comment)
       render({ message: "Successfully Deleted Comment" }.to_json)
     else
@@ -50,9 +51,8 @@ class CommentsController < ApplicationController
     end
   end
 
-  def complete_task
-    @params["completed"] = "true"
-    update
+  def new
+    render_template 'comments/new.html.erb'
   end
 
   private
